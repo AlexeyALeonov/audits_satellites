@@ -7,3 +7,8 @@ Audits per satellite
 ```
 ./audits_satellites.ps1
 ```
+
+To specify the path to log file, you can use an optional parameter `-Path`:
+```
+./audits_satellites.ps1 -Path x:\storagenode\node.log
+```
