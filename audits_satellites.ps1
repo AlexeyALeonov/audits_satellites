@@ -1,4 +1,14 @@
-$audits = (docker logs storagenode 2>&1 | sls GET_AUDIT).Line
+Param (
+    $Path
+)
+
+if (-not $Path) {
+    $logs = docker logs storagenode 2>&1
+} else {
+    $logs = Get-Content $Path
+}
+
+$audits = ($logs | sls GET_AUDIT).Line
 $sats = (($audits | sls '({.*})').Matches.Value | ConvertFrom-Json).SatelliteID | select -Unique
  
 foreach ($sat in $sats) {
