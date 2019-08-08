@@ -1,4 +1,5 @@
 #!/bin/bash
+# Thanks for the script to our fellow community member @robertstanfield https://community.storj.io/channel/storagenode?msg=ftbNKerrkrpHXJ325
 
 echo -e "Fetching satellite audits stat information. Please wait..."
 
