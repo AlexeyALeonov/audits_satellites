@@ -5,7 +5,7 @@ echo -e "Fetching satellite audits stat information. Please wait..."
 
 audits=$(mktemp)
 sats=$(mktemp)
-if [ "$1" ]; then
+if [ -z "$1" ]; then
   logs=$(mktemp)
   docker logs storagenode 2>$logs
 else
