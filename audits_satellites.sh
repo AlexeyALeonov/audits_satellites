@@ -5,11 +5,11 @@ echo -e "Fetching satellite audits stat information. Please wait..."
 
 audits=$(mktemp)
 sats=$(mktemp)
-if [ -z "$1" ]; then
+if [ -e "${1}" ]; then
+  logs=$1
+else
   logs=$(mktemp)
   docker logs storagenode 2>$logs
-else
-  logs=$1
 fi
 cat $logs | grep GET_AUDIT > $audits
  
