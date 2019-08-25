@@ -3,7 +3,7 @@ Param (
 )
 
 if (-not $Path) {
-    $logs = docker logs storagenode 2>&1
+    $logs = cmd.exe /c "docker logs storagenode 2>&1"
 } else {
     $logs = Get-Content $Path
 }
